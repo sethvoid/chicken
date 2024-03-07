@@ -1,0 +1,81 @@
+{
+  "test1": {
+    "name": "Strict Transport Security",
+    "type": "multivalue",
+    "matching-type": "contain",
+    "key": "strict-transport-security",
+    "value": [
+      "max-age=31536000"
+    ],
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security"
+  },
+  "test2": {
+    "name": "x Frame options",
+    "type": "multivalue",
+    "key": "x-frame-options",
+    "matching-type": "contain",
+    "value": [
+      "DENY",
+      "SAMEORIGIN"
+    ],
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options"
+  },
+  "test3": {
+    "name": "X-Content Type Options",
+    "type": "value",
+    "key": "X-Content-Type-Options",
+    "matching-type": "contain",
+    "value": "nosniff",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options"
+  },
+  "test4": {
+    "name": "content security policy",
+    "type": "value",
+    "key": "Content-Security-Policy",
+    "matching-type": "contain",
+    "value": "default-src 'self'",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options"
+  },
+  "test5": {
+    "name": "x-xss-protection",
+    "type": "value",
+    "key": "x-xss-protection",
+    "matching-type": "should-not-be-set",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection"
+  },
+  "test6": {
+    "name": "referrer-policy",
+    "type": "value",
+    "key": "referrer-policy",
+    "matching-type": "contain",
+    "value": "no-referrer",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy"
+  },
+  "test7": {
+    "name": "Expect-CT",
+    "type": "multivalue",
+    "key": "Expect-CT",
+    "matching-type": "contain",
+    "value": [
+      "enforce",
+      "max-age=86400"
+    ],
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Expect-CT"
+  },
+  "test8": {
+    "name": "cross-origin-embedder-policy",
+    "type": "value",
+    "key": "cross-origin-embedder-policy",
+    "matching-type": "contain",
+    "value": "require-corp",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cross-Origin-Embedder-Policy"
+  },
+  "test9": {
+    "name": "cross-origin-resource-policy",
+    "type": "value",
+    "key": "cross-origin-resource-policy",
+    "matching-type": "contain",
+    "value": "same-origin",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cross-Origin_Resource_Policy"
+  }
+}
