@@ -4,6 +4,18 @@ import sys
 import requests
 import re
 
+text_art = '''
+                ▒▒▒▒▒▒▒█▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀█
+                ▒▒▒▒▒▒▒█░▒▒▒▒▒▒▒▓▒▒▓▒▒▒▒▒▒▒░█
+                ▒▒▒▒▒▒▒█░▒▒▓▒▒▒▒▒▒▒▒▒▄▄▒▓▒▒░█░▄▄
+                ▒▒▄▀▀▄▄█░▒▒▒▒▒▒▓▒▒▒▒█░░▀▄▄▄▄▄▀░░█
+                ▒▒█░░░░█░▒▒▒▒▒▒▒▒▒▒▒█░░░░░░░░░░░█  <scanning since 2013>
+                ▒▒▒▀▀▄▄█░▒▒▒▒▓▒▒▒▓▒█░░░█▒░░░░█▒░░█
+                ▒▒▒▒▒▒▒█░▒▓▒▒▒▒▓▒▒▒█░░░░░░░▀░░░░░█
+                ▒▒▒▒▒▄▄█░▒▒▒▓▒▒▒▒▒▒▒█░░█▄▄█▄▄█░░█
+                ▒▒▒▒█░░░█▄▄▄▄▄▄▄▄▄▄█░█▄▄▄▄▄▄▄▄▄█
+                ▒▒▒▒█▄▄█░░█▄▄█░░░░░░█▄▄█░░█▄▄█
+'''
 def extract_comments(content, url=""):
     html_comments = {}
     js_comments = {}
@@ -50,7 +62,13 @@ def scan_for_prohibited(comments_html, comments_js):
 
     return prohibited_findings
 
-def main():
+def main(text_art):
+    print(text_art)
+
+    # ANSI escape codes for colors
+    red = "\033[0;31m"
+    green = "\033[0;32m"
+    reset = "\033[0m"  # Reset to default color
     if len(sys.argv) < 2:
         print("Usage: scan.py <url>")
         exit(1)
@@ -85,4 +103,4 @@ def main():
 
 if __name__ == "__main__":
     import requests  # You may need to install the requests library
-    main()
+    main(text_art)
